@@ -1,0 +1,26 @@
+{% comment %}
+  Reusable button component - supports primary, secondary, and ghost variants
+  Usage: {% include 'button' text: 'Button text' url: '#' variant: 'primary' %}
+{% endcomment %}
+
+{%- liquid
+  assign text = text | default: 'Button'
+  assign url = url | default: '#'
+  assign variant = variant | default: 'primary'
+  assign icon = icon | default: ''
+  assign class = class | default: ''
+  assign disabled = disabled | default: false
+  assign type = type | default: 'link'
+-%}
+
+{%- if type == 'button' -%}
+  <button type="button" class="btn btn-{{ variant }} {{ class }}" {% if disabled %}disabled{% endif %}>
+    {{ text }}
+    {%- if icon %} <span class="icon">{% include 'icon' icon: icon %}</span>{% endif -%}
+  </button>
+{%- else -%}
+  <a href="{{ url }}" class="btn btn-{{ variant }} {{ class }}">
+    {{ text }}
+    {%- if icon %} <span class="icon">{% include 'icon' icon: icon %}</span>{% endif -%}
+  </a>
+{%- endif -%}

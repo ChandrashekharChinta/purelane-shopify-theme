@@ -1,0 +1,70 @@
+<!-- ================= TRUST BAR ================= -->
+<section class="sec rv" id="trust" data-scene="3">
+  <div class="wrap">
+    <div class="trust-bar glass-2">
+      {%- for block in section.blocks -%}
+        <div class="trust-item">
+          <span class="trust-icon">
+            {%- if block.settings.icon -%}
+              {% include 'icon' icon: block.settings.icon %}
+            {%- else -%}
+              ✓
+            {%- endif -%}
+          </span>
+          <div>
+            <strong>{{ block.settings.title }}</strong>
+            <p class="body-s">{{ block.settings.description }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "check", "label": "Check" },
+            { "value": "heart", "label": "Heart" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Bar",
+      "blocks": [
+        { "type": "trust_item", "settings": { "icon": "leaf", "title": "Plant-based", "description": "100% natural ingredients" } },
+        { "type": "trust_item", "settings": { "icon": "shield", "title": "Safe", "description": "Tested & verified safe" } },
+        { "type": "trust_item", "settings": { "icon": "truck", "title": "Free shipping", "description": "On bundles across India" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

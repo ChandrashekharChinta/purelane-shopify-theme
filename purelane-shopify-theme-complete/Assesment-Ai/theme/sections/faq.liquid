@@ -1,0 +1,44 @@
+<!-- ================= FAQ (Placeholder) ================= -->
+<section class="sec rv">
+  <div class="wrap">
+    <h2 class="d2">Frequently asked questions</h2>
+    <div style="max-width:600px;margin:34px auto 0">
+      {%- for block in section.blocks -%}
+        <details class="glass-2 sec-pad" style="margin-bottom:12px">
+          <summary style="font-weight:600;cursor:pointer">{{ block.settings.question }}</summary>
+          <div class="body-s" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--g-line)">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

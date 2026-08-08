@@ -1,0 +1,58 @@
+<!-- ================= ANNOUNCEMENT BAR (Ticker) ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    {%- for block in section.blocks -%}
+      <span>
+        {{ block.settings.announcement_text }}
+        {%- if block.settings.highlight_text -%}
+          <b>{{ block.settings.highlight_text }}</b>
+        {%- endif -%}
+      </span>
+    {%- endfor -%}
+    
+    {%- comment -%}Repeat for continuous loop{%- endcomment -%}
+    {%- for block in section.blocks -%}
+      <span>
+        {{ block.settings.announcement_text }}
+        {%- if block.settings.highlight_text -%}
+          <b>{{ block.settings.highlight_text }}</b>
+        {%- endif -%}
+      </span>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announcement text"
+        },
+        {
+          "type": "text",
+          "id": "highlight_text",
+          "label": "Highlight text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar",
+      "blocks": [
+        { "type": "announcement", "settings": { "announcement_text": "Free shipping", "highlight_text": "on every bundle across India" } },
+        { "type": "announcement", "settings": { "announcement_text": "100% plant-based", "highlight_text": "and non-toxic" } },
+        { "type": "announcement", "settings": { "announcement_text": "Loved by", "highlight_text": "12 lakh+ happy homes" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

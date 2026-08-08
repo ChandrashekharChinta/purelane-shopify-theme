@@ -1,0 +1,33 @@
+{
+  "general": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you are looking for cannot be found."
+    }
+  },
+  "sections": {
+    "announcement": {
+      "label": "Announcement"
+    },
+    "header": {
+      "label": "Header"
+    },
+    "footer": {
+      "label": "Footer"
+    },
+    "hero": {
+      "label": "Hero"
+    },
+    "featured_products": {
+      "label": "Featured products"
+    },
+    "newsletter": {
+      "label": "Newsletter"
+    }
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "view_product": "View product",
+    "out_of_stock": "Out of stock"
+  }
+}

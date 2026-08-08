@@ -1,0 +1,89 @@
+<!-- ================= BUNDLES ================= -->
+<section class="sec" id="bundles" data-scene="1">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h2 class="d2" style="margin-top:6px">{{ section.settings.heading }}</h2>
+    </div>
+  </div>
+  <div class="pgrid" style="margin-top:34px">
+    {%- for block in section.blocks -%}
+      <div class="pgrid-i rv" style="animation-delay: {{ forloop.index0 | times: 0.1 }}s">
+        <div class="product-card">
+          <div class="product-image glass-2" style="display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:var(--bg-2)">
+            <span style="font-size:48px">📦</span>
+          </div>
+          <div class="product-info">
+            <h4 class="product-title">{{ block.settings.title }}</h4>
+            <p class="body-s">{{ block.settings.description }}</p>
+            <div class="product-price" style="margin-top:12px">
+              <span class="current-price"><strong>{{ block.settings.price }}</strong></span>
+              {%- if block.settings.compare_at -%}
+                <s class="original-price">{{ block.settings.compare_at }}</s>
+              {%- endif -%}
+            </div>
+            <a href="{{ block.settings.link }}" class="btn btn-primary btn-sm" style="margin-top:16px">View bundle</a>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Special offers"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bundle & Save"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bundle name"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Bundle price"
+        },
+        {
+          "type": "text",
+          "id": "compare_at",
+          "label": "Original price"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Bundle link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles"
+    }
+  ]
+}
+{% endschema %}

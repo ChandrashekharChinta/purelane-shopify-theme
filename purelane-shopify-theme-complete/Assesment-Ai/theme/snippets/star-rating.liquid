@@ -1,0 +1,22 @@
+{% comment %}
+  Star rating component - displays rating as stars
+  Usage: {% include 'star-rating' rating: 4.8 max_stars: 5 class: 'custom-class' %}
+{% endcomment %}
+
+{%- liquid
+  assign rating = rating | default: 5
+  assign max_stars = max_stars | default: 5
+  assign class = class | default: 'st'
+  assign show_text = show_text | default: false
+-%}
+
+<div class="{{ class }}">
+  {%- for i in (1..max_stars) -%}
+    {%- if i <= rating -%}
+      {%- include 'icon' icon: 'star' -%}
+    {%- else -%}
+      {%- include 'icon' icon: 'star-outline' -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if show_text %}<span>{{ rating }}/{{ max_stars }}</span>{%- endif -%}
+</div>

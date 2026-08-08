@@ -1,0 +1,47 @@
+<!-- ================= FULL RANGE ================= -->
+<section class="sec rv" id="full-range" data-scene="1">
+  <div class="wrap">
+    <div class="glass sec-pad">
+      <div style="text-align:center">
+        <h2 class="d2">{{ section.settings.heading }}</h2>
+        <p class="lede" style="margin:18px auto">{{ section.settings.description }}</p>
+        <a href="{{ section.settings.cta_link }}" class="btn btn-primary">{{ section.settings.cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Full Range",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "View the full range"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Explore all products"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full Range"
+    }
+  ]
+}
+{% endschema %}

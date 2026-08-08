@@ -1,0 +1,42 @@
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0">
+      <div class="logo">
+        <a href="/">
+          <strong>{{ shop.name }}</strong>
+        </a>
+      </div>
+      
+      <nav class="nav" aria-label="Main navigation">
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      </nav>
+      
+      <div class="header-actions">
+        <a href="/cart" class="btn btn-ghost">
+          {% include 'icon' icon: 'cart' %}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,290 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading_line_1": "Clean",
+        "heading_line_2": "That",
+        "heading_highlight": "Lasts",
+        "description": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it.",
+        "primary_button_label": "Shop now",
+        "primary_button_link": "#shop",
+        "secondary_button_label": "How it works",
+        "secondary_button_link": "#how"
+      },
+      "blocks": {
+        "slide_1": {
+          "type": "product_slide",
+          "settings": {
+            "product_name": "Single bottle",
+            "product_subtitle": "",
+            "price": "₹200",
+            "old_price": "₹299",
+            "badge": "33% off"
+          }
+        },
+        "slide_2": {
+          "type": "product_slide",
+          "settings": {
+            "product_name": "Any 2 products",
+            "product_subtitle": "",
+            "price": "₹349",
+            "old_price": "₹598",
+            "badge": "Save ₹249"
+          }
+        },
+        "slide_3": {
+          "type": "product_slide",
+          "settings": {
+            "product_name": "Any 3 products",
+            "product_subtitle": "",
+            "price": "₹499",
+            "old_price": "₹897",
+            "badge": "Save ₹398"
+          }
+        }
+      }
+    },
+    "reviews": {
+      "type": "reviews"
+    },
+    "ingredients": {
+      "type": "ingredients",
+      "settings": {
+        "heading": "Sourced from nature"
+      },
+      "blocks": {
+        "ingredient_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Coconut",
+            "description": "Plant-derived cleansers that lift grease"
+          }
+        },
+        "ingredient_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Orange peel",
+            "description": "Natural degreaser and fresh citrus lift"
+          }
+        },
+        "ingredient_3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Soap nut",
+            "description": "A traditional plant foaming agent"
+          }
+        },
+        "ingredient_4": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Neem",
+            "description": "Time-tested antibacterial from the tree"
+          }
+        },
+        "ingredient_5": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Lemongrass",
+            "description": "Clean fragrance with nothing synthetic"
+          }
+        }
+      }
+    },
+    "pillars": {
+      "type": "pillars",
+      "blocks": {
+        "pillar_1": {
+          "type": "pillar",
+          "settings": {
+            "icon": "leaf",
+            "title": "Less scrubbing",
+            "description": "A foaming formulation. The foam clings to grease and lifts it, so you wipe instead of scrub.",
+            "link_text": "Learn more",
+            "link_url": "#shop"
+          }
+        },
+        "pillar_2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shield",
+            "title": "Clean ingredients",
+            "description": "No sulphates, no chlorine, no synthetic fragrance. Nothing on the label you would not want near your food.",
+            "link_text": "Learn more",
+            "link_url": "#ingredients"
+          }
+        },
+        "pillar_3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "heart",
+            "title": "Safe around everyone",
+            "description": "Gentle on hands, safe around kids and pets, and it leaves no toxic residue on the surfaces you touch every day.",
+            "link_text": "Learn more",
+            "link_url": "#proof"
+          }
+        }
+      }
+    },
+    "proof": {
+      "type": "proof",
+      "settings": {
+        "kicker": "Why it works",
+        "heading": "Tough on grime. Gentle on everything else.",
+        "description": "Every formula is built on plant-derived cleansers and essential oils. It behaves exactly like the cleaner you are used to, minus the things you never signed up for.",
+        "cta_text": "See the ingredient list",
+        "cta_url": "#ingredients"
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "99.9%",
+            "stat_label": "Germ kill",
+            "stat_description": "Tested against germs and bacteria"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "0%",
+            "stat_label": "Sulphates",
+            "stat_description": "No SLS, chlorine or parabens"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "100%",
+            "stat_label": "Plant based",
+            "stat_description": "Cleansers derived from plants"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "4.8",
+            "stat_label": "Rated",
+            "stat_description": "Across 8,000+ verified reviews"
+          }
+        }
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "kicker": "Best sellers",
+        "heading": "Most loved products"
+      }
+    },
+    "bundles": {
+      "type": "bundles",
+      "settings": {
+        "kicker": "Special offers",
+        "heading": "Bundle & Save"
+      }
+    },
+    "full_range": {
+      "type": "full-range",
+      "settings": {
+        "heading": "View the full range",
+        "description": "Explore our complete collection of plant-based home care products.",
+        "cta_text": "Shop all products",
+        "cta_link": "/products"
+      }
+    },
+    "categories": {
+      "type": "bundle-categories",
+      "settings": {
+        "heading": "Shop by category"
+      },
+      "blocks": {
+        "cat_1": {
+          "type": "category",
+          "settings": {
+            "category_name": "Kitchen",
+            "category_description": "Degreasers and surface cleaners",
+            "category_link": "/collections/kitchen"
+          }
+        },
+        "cat_2": {
+          "type": "category",
+          "settings": {
+            "category_name": "Laundry",
+            "category_description": "Detergents and fabric care",
+            "category_link": "/collections/laundry"
+          }
+        },
+        "cat_3": {
+          "type": "category",
+          "settings": {
+            "category_name": "Personal care",
+            "category_description": "Hand wash and body care",
+            "category_link": "/collections/personal-care"
+          }
+        }
+      }
+    },
+    "trust_bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "leaf",
+            "title": "100% Plant-based",
+            "description": "Natural ingredients derived from plants"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Safe for kids & pets",
+            "description": "Gentle formula tested for safety"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "check",
+            "title": "Zero harsh chemicals",
+            "description": "No sulphates, chlorine, or parabens"
+          }
+        },
+        "trust_4": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping on bundles",
+            "description": "Across India on all bundle orders"
+          }
+        }
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "kicker": "Stay updated",
+        "heading": "Get cleaning tips & new launches",
+        "description": "Join thousands of happy homes getting smarter about their cleaning routines.",
+        "email_placeholder": "Enter your email",
+        "button_text": "Subscribe",
+        "privacy_text": "We respect your inbox. Unsubscribe anytime."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "reviews",
+    "ingredients",
+    "pillars",
+    "proof",
+    "featured_products",
+    "bundles",
+    "full_range",
+    "categories",
+    "trust_bar",
+    "newsletter"
+  ]
+}

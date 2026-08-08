@@ -1,0 +1,80 @@
+<!-- ================= FEATURED PRODUCTS ================= -->
+<section class="sec" id="shop" data-scene="1">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h2 class="d2" style="margin-top:6px">{{ section.settings.heading }}</h2>
+    </div>
+  </div>
+  <div class="pgrid" style="margin-top:34px">
+    {%- for block in section.blocks -%}
+      <div class="pgrid-i rv" style="animation-delay: {{ forloop.index0 | times: 0.1 }}s">
+        {%- if block.settings.product != blank -%}
+          {%- assign product = all_products[block.settings.product] -%}
+          {% include 'product-card' product: product %}
+        {%- else -%}
+          {%- include 'product-card' title: block.settings.title price: block.settings.price compare_at: block.settings.compare_at -%}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Best sellers"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Most loved products"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product title (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "compare_at",
+          "label": "Compare at price (fallback)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

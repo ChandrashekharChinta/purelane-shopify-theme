@@ -1,0 +1,19 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "colors": {
+        "primary": "#4b3a8f",
+        "accent": "#f0a03c",
+        "text": "#17102b"
+      },
+      "typography": {
+        "heading_font": "outfit_n4",
+        "body_font": "outfit_n4"
+      },
+      "spacing": {
+        "section_spacing": 34
+      }
+    }
+  }
+}

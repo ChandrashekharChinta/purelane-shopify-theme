@@ -1,0 +1,60 @@
+{% comment %}
+  Product card snippet - displays individual product with price and add-to-cart
+  Can work with real Shopify products or fallback to placeholder data
+  Usage: {% include 'product-card' product: product %}
+         or {% include 'product-card' title: 'Product Name' price: 299 image: image_object %}
+{% endcomment %}
+
+{%- liquid
+  assign product = product | default: nil
+  assign title = title | default: ''
+  assign price = price | default: 0
+  assign compare_at = compare_at | default: 0
+  assign image = image | default: nil
+  assign class = class | default: ''
+  assign show_cart = show_cart | default: true
+-%}
+
+{%- if product != nil -%}
+  {%- assign product_title = product.title -%}
+  {%- assign product_price = product.price | money -%}
+  {%- assign product_image = product.featured_image -%}
+{%- else -%}
+  {%- assign product_title = title -%}
+  {%- assign product_price = price -%}
+  {%- assign product_image = image -%}
+{%- endif -%}
+
+<div class="product-card {{ class }}">
+  <div class="product-image">
+    {%- if product_image -%}
+      <img 
+        src="{{ product_image | img_url: '300x300' }}" 
+        alt="{{ product_title }}"
+        loading="lazy"
+      />
+    {%- else -%}
+      <div class="placeholder" style="background: var(--bg-2); aspect-ratio: 1;"></div>
+    {%- endif -%}
+  </div>
+  
+  <div class="product-info">
+    <h4 class="product-title">{{ product_title }}</h4>
+    <div class="product-price">
+      <span class="current-price">{{ product_price }}</span>
+      {%- if compare_at > 0 -%}
+        <s class="original-price">{{ compare_at | money }}</s>
+      {%- endif -%}
+    </div>
+    
+    {%- if show_cart and product != nil -%}
+      <form method="post" action="/cart/add" class="product-add-to-cart">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+        <button type="submit" class="btn btn-primary btn-sm">
+          {% include 'icon' icon: 'cart' %}
+          Add to cart
+        </button>
+      </form>
+    {%- endif -%}
+  </div>
+</div>

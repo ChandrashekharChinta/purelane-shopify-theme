@@ -1,0 +1,80 @@
+<!-- ================= INGREDIENTS ================= -->
+<section class="sec" id="ingredients" data-scene="2">
+  <div class="wrap">
+    <div class="glass sec-pad rv">
+      <div class="panel-head">
+        <h2 class="d2">{{ section.settings.heading }}</h2>
+        <div class="rule">
+          <i></i>
+          {% include 'icon' icon: 'leaf' %}
+          <i></i>
+        </div>
+      </div>
+      <div class="ing">
+        {%- for block in section.blocks -%}
+          <div class="ing-i">
+            <div class="art">
+              {%- if block.settings.image -%}
+                <img src="{{ block.settings.image | img_url: '100x100' }}" alt="{{ block.settings.title }}" />
+              {%- else -%}
+                <svg viewBox="0 0 100 100" fill="none" stroke="#ece6f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="50" cy="50" r="30" />
+                  <path d="M50 20v60M20 50h60" stroke="#f0a03c" />
+                </svg>
+              {%- endif -%}
+            </div>
+            <h4>{{ block.settings.title }}</h4>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Sourced from nature"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient name"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon/image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients",
+      "blocks": [
+        { "type": "ingredient", "settings": { "title": "Coconut", "description": "Plant-derived cleansers that lift grease" } },
+        { "type": "ingredient", "settings": { "title": "Orange peel", "description": "Natural degreaser and fresh citrus lift" } },
+        { "type": "ingredient", "settings": { "title": "Soap nut", "description": "A traditional plant foaming agent" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

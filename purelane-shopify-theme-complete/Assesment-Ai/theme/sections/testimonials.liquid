@@ -1,0 +1,55 @@
+<!-- ================= TESTIMONIALS (Placeholder) ================= -->
+<section class="sec rv">
+  <div class="wrap">
+    <h2 class="d2">What customers say</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:28px">
+      {%- for block in section.blocks -%}
+        <div class="glass-2 sec-pad">
+          <div class="st" style="margin-bottom:12px">
+            {%- for i in (1..5) -%}
+              {% include 'icon' icon: 'star' %}
+            {%- endfor -%}
+          </div>
+          <h5>{{ block.settings.title }}</h5>
+          <p class="body-s">{{ block.settings.quote }}</p>
+          <div style="margin-top:12px;font-weight:500;font-size:14px">{{ block.settings.author }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

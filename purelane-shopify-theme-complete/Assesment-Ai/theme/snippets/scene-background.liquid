@@ -1,0 +1,91 @@
+{% comment %}
+  Animated scene background with water cinematics
+  Creates fixed background with parallax water animation
+{% endcomment %}
+
+<div class="scenes" id="scenes">
+  <!-- Scene 1: Primary gradient -->
+  <div class="scene s1 on" data-scene="1">
+    <div class="water">
+      <div class="wl wl-a">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <defs>
+            <filter id="water-blur">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+            </filter>
+          </defs>
+          <g fill="rgba(255,255,255,.15)" filter="url(#water-blur)">
+            <path d="M0,300 Q200,250 400,300 T800,300 T1200,300 T1600,300 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+      <div class="wl wl-b">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.1)" opacity="0.54">
+            <path d="M0,350 Q300,280 600,350 T1200,350 T1600,350 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+      <div class="wl wl-c">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.08)">
+            <path d="M0,400 Q400,320 800,400 T1600,400 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+      <div class="wl wl-s">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.2)">
+            <path d="M0,450 Q200,400 400,450 T800,450 T1200,450 T1600,450 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scene 2: Secondary gradient -->
+  <div class="scene s2" data-scene="2">
+    <div class="water">
+      <div class="wl wl-a">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.12)">
+            <path d="M0,300 Q200,250 400,300 T800,300 T1200,300 T1600,300 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+      <div class="wl wl-b">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.08)">
+            <path d="M0,350 Q300,280 600,350 T1200,350 T1600,350 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scene 3: Tertiary gradient -->
+  <div class="scene s3" data-scene="3">
+    <div class="water">
+      <div class="wl wl-a">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.1)">
+            <path d="M0,300 Q200,250 400,300 T800,300 T1200,300 T1600,300 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scene 4: Dark gradient -->
+  <div class="scene s4" data-scene="4">
+    <div class="water">
+      <div class="wl wl-b">
+        <svg class="sv" viewBox="0 0 1600 600" preserveAspectRatio="none">
+          <g fill="rgba(255,255,255,.06)">
+            <path d="M0,350 Q300,280 600,350 T1200,350 T1600,350 L1600,600 L0,600 Z" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

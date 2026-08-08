@@ -1,0 +1,82 @@
+<!-- ================= PILLARS ================= -->
+<section class="sec" id="how" data-scene="2">
+  <div class="wrap">
+    <div class="pillars">
+      {%- for block in section.blocks -%}
+        <article class="glass pillar rv" {% if forloop.index > 1 %}style="animation-delay: {{ forloop.index0 | times: 0.15 }}s"{% endif %}>
+          <span class="pi">
+            {% case block.settings.icon %}
+              {% when 'leaf' %}{% include 'icon' icon: 'leaf' %}
+              {% when 'shield' %}{% include 'icon' icon: 'shield' %}
+              {% when 'heart' %}{% include 'icon' icon: 'heart' %}
+              {% when 'check' %}{% include 'icon' icon: 'check' %}
+              {% else %}{% include 'icon' icon: 'leaf' %}
+            {% endcase %}
+          </span>
+          <h3 class="d3">{{ block.settings.title }}</h3>
+          <p class="body-s">{{ block.settings.description }}</p>
+          {% if block.settings.link_text and block.settings.link_url %}
+            <a class="btn btn-ghost btn-sm" href="{{ block.settings.link_url }}">{{ block.settings.link_text }}</a>
+          {% endif %}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pillars",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pillars",
+      "blocks": [
+        { "type": "pillar", "settings": { "icon": "leaf", "title": "Less scrubbing", "description": "A foaming formulation. The foam clings to grease and lifts it, so you wipe instead of scrub." } },
+        { "type": "pillar", "settings": { "icon": "shield", "title": "Clean ingredients", "description": "No sulphates, no chlorine, no synthetic fragrance." } },
+        { "type": "pillar", "settings": { "icon": "heart", "title": "Safe around everyone", "description": "Gentle on hands, safe around kids and pets." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

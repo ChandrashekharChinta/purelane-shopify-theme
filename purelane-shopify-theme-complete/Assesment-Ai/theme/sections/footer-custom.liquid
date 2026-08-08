@@ -1,0 +1,82 @@
+<!-- ================= FOOTER ================= -->
+<section class="sec" id="footer" data-scene="4" style="background: var(--ink); color: var(--surface)">
+  <div class="wrap">
+    <div class="footer-content" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px;padding:34px 0;border-bottom:1px solid rgba(255,255,255,.1)">
+      {%- for block in section.blocks -%}
+        <div>
+          <h5 style="margin-bottom:12px">{{ block.settings.column_title }}</h5>
+          {%- if block.settings.column_text -%}
+            <div class="body-s" style="opacity:.8">{{ block.settings.column_text }}</div>
+          {%- endif -%}
+          {%- if block.settings.links -%}
+            <ul style="list-style:none;padding:0">
+              {%- assign link_array = block.settings.links | split: ',' -%}
+              {%- for link in link_array -%}
+                <li style="margin-top:8px"><a href="#" class="body-s" style="opacity:.7;text-decoration:none">{{ link | strip }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+    
+    <div class="footer-bottom" style="padding:34px 0;text-align:center;border-top:1px solid rgba(255,255,255,.1)">
+      <p class="body-s" style="opacity:.6">{{ section.settings.copyright_text }}</p>
+      {%- if section.settings.show_socials -%}
+        <div style="display:flex;gap:18px;justify-content:center;margin-top:18px">
+          <a href="https://facebook.com" aria-label="Facebook" style="opacity:.6;hover:opacity:1">{% include 'icon' icon: 'facebook' %}</a>
+          <a href="https://instagram.com" aria-label="Instagram" style="opacity:.6">{% include 'icon' icon: 'instagram' %}</a>
+          <a href="https://twitter.com" aria-label="Twitter" style="opacity:.6">{% include 'icon' icon: 'twitter' %}</a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2024 Purelane. All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_socials",
+      "label": "Show social links",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer_column",
+      "name": "Footer Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_title",
+          "label": "Column title"
+        },
+        {
+          "type": "textarea",
+          "id": "column_text",
+          "label": "Column text"
+        },
+        {
+          "type": "textarea",
+          "id": "links",
+          "label": "Links (comma-separated)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Custom"
+    }
+  ]
+}
+{% endschema %}

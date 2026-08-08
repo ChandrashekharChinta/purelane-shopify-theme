@@ -1,0 +1,23 @@
+{% comment %}
+  Reusable badge component - glass-effect badges for promises/features
+  Usage: {% include 'badge' icon: 'leaf' title: 'Plant powered' subtitle: '' %}
+{% endcomment %}
+
+{%- liquid
+  assign icon = icon | default: ''
+  assign title = title | default: 'Badge'
+  assign subtitle = subtitle | default: ''
+  assign class = class | default: ''
+-%}
+
+<div class="badge {{ class }}">
+  {%- if icon -%}
+    <span class="bi">
+      {%- include 'icon' icon: icon -%}
+    </span>
+  {%- endif -%}
+  <span>
+    {{- title -}}
+    {%- if subtitle %}<br>{{ subtitle }}{%- endif -%}
+  </span>
+</div>
